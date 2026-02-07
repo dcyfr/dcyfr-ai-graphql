@@ -1,11 +1,14 @@
 import { defineConfig } from 'vitest/config';
+import { createRequire } from 'node:module';
 import path from 'node:path';
+
+const require = createRequire(import.meta.url);
 
 export default defineConfig({
   resolve: {
     alias: {
-      // Force single graphql instance - resolve CJS/ESM duplication
-      graphql: path.resolve(__dirname, 'node_modules/graphql/index.mjs'),
+      // Force single graphql instance - resolve workspace hoisting
+      graphql: path.dirname(require.resolve('graphql/package.json')),
     },
   },
   test: {
