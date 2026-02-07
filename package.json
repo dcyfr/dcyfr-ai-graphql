@@ -1,6 +1,6 @@
 {
   "name": "@dcyfr/ai-graphql",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Production-ready GraphQL API server template with type-safe resolvers and schema-first design",
   "type": "module",
   "main": "dist/index.js",
